@@ -28,17 +28,15 @@ scissors = ('''
 ''')
 
 sign = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
-computer_choice = ["Rock", "Paper", "Scissors"]
-random_choice = ""
+computer_choice = random.randint(0, 2)
 
 if sign == 0:
     print(rock)
     print("Compuer Choice: ")
-    random_choice = random.choice(computer_choice)
-    if random_choice == "Paper":
+    if computer_choice == 1:
         print(paper, end="\n")
         print("You Lose!")
-    elif random_choice == "Rock":
+    elif computer_choice == 0:
         print(rock, end="\n")
         print("It's Draw!")
     else:
@@ -47,11 +45,10 @@ if sign == 0:
 elif sign == 1:
     print("Paper")
     print("Compuer Choice: ")
-    random_choice = random.choice(computer_choice)
-    if random_choice == "Scissors":
+    if computer_choice == 2:
         print(scissors, end="\n")
         print("You Lose!")
-    elif random_choice == "Paper":
+    elif computer_choice == 1:
         print(paper, end="\n")
         print("It's Draw!")
     else:
@@ -60,15 +57,14 @@ elif sign == 1:
 elif sign == 2:
     print("Scissors")
     print("Compuer Choice: ")
-    random_choice = random.choice(computer_choice)
-    if random_choice == "Rock":
+    if computer_choice == 0:
         print(rock, end="\n")
         print("You Lose!")
-    elif random_choice == "Scissors":
+    elif computer_choice == 2:
         print(scissors, end="\n")
         print("It's Draw!")
     else:
         print(paper, end="\n")
         print("You Win!")
 else:
-    print("Wrong choose is given. You Lose!")
+    print("You typed an invalid number. You Lose!")
