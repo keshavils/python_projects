@@ -5,9 +5,12 @@ from hangman_art import *
 print(logo[0])
 chosen_word = random.choice(words_list).lower()
 lives = 6
+if lives == 6:
+    print(stages[lives])
 
 
 placeholder = "_"*len(chosen_word)
+print(f"Guess the word: {placeholder}")
 correct_letter = []
 
 game_over = False
